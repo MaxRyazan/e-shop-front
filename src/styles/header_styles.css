@@ -13,16 +13,17 @@
     justify-content: center;
 }
 .close_and_delete_products_in_basket{
-    border: 0.2vh solid green;
+    border: 0.3vh solid hotpink;
+    border-radius: 4px;
     background-color: white;
-    box-shadow: 0.5vh 0.5vh 0.5vh gray;
+    box-shadow: 0.2vh 0.2vh 0.2vh gray;
     padding: 0.5vh;
     font-size: 1.5vh;
     left: 0.5vh;
     top: 0.5vh;
 }
 .close_and_delete_products_in_basket:hover{
-    background-color: Mintcream;
+    background-color: hotpink;
 }
 .close_and_delete_products_in_basket:active{
     box-shadow: none;
@@ -38,6 +39,14 @@
     width: inherit;
     height: 100%;
     text-align: center;
+    vertical-align: middle;
+    font-size: 1.5vh;
+}
+.sub_category{
+    margin-top: 2vh;
+    width: inherit;
+    height: 100%;
+    margin-left: 30%;
     vertical-align: middle;
     font-size: 1.5vh;
 }
@@ -120,7 +129,7 @@
 .result_price{
     bottom: 2vh;
     right: 2vh;
-    border-bottom: 0.5vh solid lightgreen;
+    border-bottom: 0.5vh solid lawngreen;
 }
 .relative{
     position: relative;
@@ -214,6 +223,8 @@
     overflow: hidden;
 }
 .toMove:hover{
+    position: relative;
+    z-index: 9999;
     transform: scale(2.3);
 }
 .root_container{
@@ -235,7 +246,6 @@
     position: relative;
 }
 .slide{
-    /*overflow: hidden;*/
     width: 12vh;
     display: inline-flex;
 }
@@ -250,14 +260,14 @@
     cursor: pointer;
 }
 .payment_btn{
-    border: 0.2vh solid green;
-    border-radius: 2px;
-    background-color: white;
+    border: 0.3vh solid lawngreen;
+    border-radius: 4px;
+    background-color: lawngreen;
     left: 3vh;
     bottom: 2vh;
     font-family: Bahnschrift, serif;
     font-size: 1.5vh;
-    box-shadow: 0.5vh 0.5vh 0.5vh gray;
+    box-shadow: 0.2vh 0.2vh 0.2vh gray;
 }
 .payment_btn:hover{
     background-color: Mintcream;
@@ -306,12 +316,12 @@
     right: 0.5vh;
     background-color: white;
     border: 0.2vh solid green;
-    box-shadow: 0.5vh 0.5vh 0.5vh gray;
+    box-shadow: 0.3vh 0.3vh 0.3vh gray;
     font-size: 2vh;
-    padding: 0.5vh 1vh;
+    padding: 0.2vh 0.8vh;
 }
 .close_button_basket:hover{
-    background-color: lightgreen;
+    background-color: lawngreen;
 }
 .close_button_basket:active{
     box-shadow: none;
@@ -375,6 +385,22 @@
     text-align: center;
     justify-content: center;
 }
-.fontGreen{
+.font_green{
     color: green;
+}
+.filter_leather{
+    position: absolute;
+    padding: 0;
+    width: 1.7vh;
+    height: 1.7vh;
+    left: 22%;
+    background-color: white;
+    border: 0.2vh solid green;
+}
+.filter_leather:hover{
+    background-color: lightgreen;
+}
+.title_filter_item{
+    max-width: 20%;
+    font-size: 1.7vh;
 }

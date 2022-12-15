@@ -1,15 +1,16 @@
 import { createStore } from 'vuex'
-import basketMutations from "@/js/basket/basketMutations";
-import basketGetters from "@/js/basket/basketGetters";
+import mutations from "@/js/mutations";
+import getters from "@/js/getters";
+
 
 export default createStore({
     state() {
         return {
-            inBasket: []
+            inBasket: [],
+            bags: []
         }
     },
 
-    mutations: basketMutations,
-
-    getters: basketGetters
+    mutations: mutations,
+    getters: getters,
 })

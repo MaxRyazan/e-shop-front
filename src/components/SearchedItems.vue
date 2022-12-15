@@ -1,7 +1,13 @@
 <template>
+  <div class="">
+    <div class="inline">
+      <label class="title_filter_item">Только натуральная кожа</label>
+      <button v-bind="leatherFlag" class="filter_leather" @click="choose_leather"></button>
+    </div>
+  </div>
   <div class="inline w99">
     <div class="root_container">
-      <div v-for="item in bags" :key="item.id" class="items_in_root">
+      <div v-for="item in getBags" :key="item.id" class="items_in_root">
         <div class="title">{{ item.productName }}</div>
 
         <div class="show_bags_inner">
@@ -19,21 +25,25 @@
 
             <div class="category">
               <h3>Описание:</h3>
-              <div class="fontGreen">{{ item.productDescription }}</div>
+              <div class="font_green">{{ item.productDescription }}</div>
+            </div>
+
+            <div class="sub_category">
+              <div class="font_green" v-for="cat in item.subCategories" :key="cat"> -{{ cat.title }}</div>
             </div>
 
             <search-items-div>
-              <template v-slot:title>Артикул:</template>
+              <template v-slot:title>Артикул: </template>
               <template v-slot:content>{{ item.productArticle }}</template>
             </search-items-div>
 
             <search-items-div>
-              <template v-slot:title>Производитель:</template>
+              <template v-slot:title>Производитель: </template>
               <template v-slot:content>{{ item.productManufacturer }}</template>
             </search-items-div>
 
             <search-items-div>
-              <template v-slot:title>Цена:</template>
+              <template v-slot:title>Цена: </template>
               <template v-slot:content v-if="!item.discount">{{ item.productPrice }} &#x20bd;</template>
               <template v-slot:content v-else>{{ item.productPrice * discount }} &#x20bd;</template>
             </search-items-div>
@@ -68,17 +78,18 @@ import SearchItemsDiv from "@/components/SearchItemsDiv";
 import sliderDiscount from "@/components/SliderDiscount";
 import BasketIcon from "@/components/BasketIcon";
 import ShowBasket from "@/components/ShowBasket";
-import {mapMutations, mapGetters} from 'vuex'
+import { mapMutations, mapGetters } from 'vuex'
 
 
 export default {
   name: "SearchedItems",
-  props: ['bags', 'product'],
+  props: ['product'],
 
   data() {
     return {
       count: 1,
       discount: 0.8,
+      leatherFlag: false
     }
   },
   methods: {
@@ -108,11 +119,25 @@ export default {
     getImgUrl(photo) {
       return require('@/assets/img/' + photo + '.png');
     },
+
+    choose_leather(event){
+      if(event.target.innerHTML === '#'){
+        this.leatherFlag = false
+        event.target.innerHTML = ''
+      } else {
+        if(event.target.innerHTML === ''){
+          this.leatherFlag = true
+          event.target.innerHTML = '#'
+        }
+      }
+    },
   },
 
   computed:{
     ...mapGetters({
-    getBasket: "getBasket"
+      getBasket: "getBasket",
+      getBags: "getBags"
+
     })
   },
 

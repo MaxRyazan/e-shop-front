@@ -7,7 +7,7 @@
     <header-button :path="umbrella" @press="searchBags('UMBRELLA')">Зонты</header-button>
     <header-button :path="belts" @press="searchBags('BELT')">Ремни</header-button>
   </div>
-  <searched-items :bags="bags"></searched-items>
+  <searched-items></searched-items>
 </template>
 
 
@@ -15,19 +15,20 @@
 import "../styles/header_styles.css"
 import HeaderButton from "@/components/HeaderButton";
 import SearchedItems from "@/components/SearchedItems";
+import store from "@/js/store";
 export default {
   name: "AppHeader",
   methods: {
     async searchBags(param) {
-      this.bags = []
+      console.log('Ищем в базе')
       const data = await fetch('http://localhost:8088/product/' + param)
-      this.bags = await data.json()
-    },
 
+      store.state.bags = await data.json()
+      console.log('Нашли: ' + store.state.bags)
+    },
   },
   data() {
     return {
-      bags: [],
       woman: require('@/images/woman_bag.png'),
       man: require('@/images/man_bag.png'),
       wallet: require('@/images/wallet.png'),

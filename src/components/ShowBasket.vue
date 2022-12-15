@@ -7,7 +7,7 @@
         <div class="inline relative  padding2">
           <h4 class="description vertical_center">{{ index + 1 + ') ' + item.productName }}</h4>
           <img :src="getImgUrl(item.photos[0])" alt="" class="image_in_basket absolut">
-          <h4 class="description vertical_center absolut priceInBasket">{{item.productPrice}} &#x20bd;</h4>
+          <h4 class="description vertical_center absolut priceInBasket">{{item.discount ? item.productPrice : item.productPrice * 0.8}} &#x20bd;</h4>
         </div>
       </div>
       <h4 class="absolut description result_price">Итого: {{ calculatedResultSum }} &#x20bd;</h4>
@@ -29,7 +29,7 @@ export default {
 
   computed: {
     ...mapGetters({
-      getBasket: "getBasket",
+      getBasket: "getBasket" ,
       calculatedResultSum: "calculatedResultSum",
       createBasketTitle: "createBasketTitle"
     }),
