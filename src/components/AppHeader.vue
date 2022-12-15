@@ -20,11 +20,8 @@ export default {
   name: "AppHeader",
   methods: {
     async searchBags(param) {
-      console.log('Ищем в базе')
       const data = await fetch('http://localhost:8088/product/' + param)
-
       store.state.bags = await data.json()
-      console.log('Нашли: ' + store.state.bags)
     },
   },
   data() {

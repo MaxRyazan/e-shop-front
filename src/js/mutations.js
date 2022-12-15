@@ -6,10 +6,6 @@ export default {
             payload.productPrice = payload.productPrice * 0.8
             state.inBasket.push(payload)
         }
-        console.log('В корзину добавлен товар:')
-        console.log(payload)
-        console.log('Сейчас в корзине:')
-        console.log(state.inBasket)
     },
 
     removeProductFromBasket(state, payload){
@@ -24,5 +20,25 @@ export default {
         state.inBasket = []
         document.querySelector('.basket').classList.add('hide')
         document.querySelector('.basket_top').classList.add('hide')
+    },
+
+    choose_leather(state, event){
+        // const temp = state.bags
+        // const param = 'Натуральная кожа'
+        if(event.target.innerHTML === ''){
+            state.leatherFlag = true
+            // console.log(state.bags[0].subCategories)
+            // state.bags = state.bags.filter(item => item.subCategories.length === 3)
+
+            // state.bags = state.bags.filter(item =>  item.subCategories.filter(sub => sub.title.includes(param)))
+            event.target.innerHTML = '#'
+        } else {
+            if(event.target.innerHTML === '#'){
+                state.leatherFlag = false
+                event.target.innerHTML = ''
+                // console.log(temp)
+                // state.bags = temp
+            }
+        }
     },
 }

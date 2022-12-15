@@ -95,6 +95,7 @@ export default {
   methods: {
     ...mapMutations({
       addThisProductToBasket: "addProductToBasket",
+      choose_leather: "choose_leather"
     }),
 
 
@@ -120,17 +121,6 @@ export default {
       return require('@/assets/img/' + photo + '.png');
     },
 
-    choose_leather(event){
-      if(event.target.innerHTML === '#'){
-        this.leatherFlag = false
-        event.target.innerHTML = ''
-      } else {
-        if(event.target.innerHTML === ''){
-          this.leatherFlag = true
-          event.target.innerHTML = '#'
-        }
-      }
-    },
   },
 
   computed:{
