@@ -1,0 +1,380 @@
+.header_main{
+    font-size: 20px;
+    width: 65%;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 25vh;
+}
+.show_bags_inner{
+    height: 100%;
+    width: 25vh;
+    margin-bottom: 10vh;
+    justify-content: center;
+}
+.close_and_delete_products_in_basket{
+    border: 0.2vh solid green;
+    background-color: white;
+    box-shadow: 0.5vh 0.5vh 0.5vh gray;
+    padding: 0.5vh;
+    font-size: 1.5vh;
+    left: 0.5vh;
+    top: 0.5vh;
+}
+.close_and_delete_products_in_basket:hover{
+    background-color: Mintcream;
+}
+.close_and_delete_products_in_basket:active{
+    box-shadow: none;
+}
+.border_green{
+    border: 0.2vh solid green;
+}
+.mb5{
+    margin-bottom: 5vh;
+}
+.category{
+    margin-top: 2vh;
+    width: inherit;
+    height: 100%;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.5vh;
+}
+.table_cell{
+    display: table-cell;
+    margin-bottom: 20px;
+}
+.search{
+    height: 4vh;
+    width: 30vh;
+    outline: none;
+    border-radius: 4px;
+    padding-left: 8px;
+    font-size: 2.3vh;
+    font-family: Bahnschrift, serif;
+    border: 1px solid black;
+}
+.search::placeholder{
+    font-size: 2vh;
+}
+.header_button{
+    display: table-cell;
+    margin: 0 auto;
+    height: 100%;
+}
+.discountTitle{
+    height: 2vh;
+}
+.description{
+    font-size: 1.5vh;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+    font-family: Bahnschrift, serif;
+}
+.item_in_discount{
+    padding: 1vh;
+
+}
+.btn_in_discount{
+    margin-left: 11vh;
+    width: 12vh;
+    height: 3vh;
+    font-size: 1.5vh;
+    background: white;
+    border: 0.2vh solid green;
+    white-space: nowrap;
+    bottom: 2vh;
+ }
+.header_button:hover{
+    transform: scale(1.1);
+}
+.header_button:active{
+    transform: scale(1);
+}
+.img_container{
+    padding: 0;
+    vertical-align: middle;
+    width: 7vh;
+    height: 7vh;
+}
+.header_container_for_items{
+    width: 8vh;
+    height: 7vh;
+}
+.title{
+    text-align: center;
+    font-size: 2vh;
+    color: green;
+    box-shadow: 0 0.5vh 0 0 lightgreen;
+}
+.img_in_card{
+    display: flex;
+    height: 17vh;
+}
+.inline{
+    display: flex;
+    margin: 0;
+}
+.result_price{
+    bottom: 2vh;
+    right: 2vh;
+    border-bottom: 0.5vh solid lightgreen;
+}
+.relative{
+    position: relative;
+}
+.vertical_center{
+    line-height: 9vh;
+}
+.w99{
+    width: 99%;
+}
+.h12{
+    height: 12vh;
+}
+.padding2{
+    padding: 2vh;
+}
+.h15vh{
+    width: 11.5vh;
+    height: 15vh;
+}
+.ml2{
+    width: 12vh;
+    height: 3vh;
+    font-size: 1.5vh;
+    background: white;
+    border: 0.2vh solid green;
+    white-space: nowrap;
+    bottom: 2vh;
+}
+.h23vh{
+    width: 20.5vh;
+    height: 23vh;
+}
+.slider_discount{
+    position: relative;
+    border: 2px solid red;
+}
+.modal_info{
+    position: absolute;
+    background-color: white;
+    right: 15vh;
+    top: 15vh;
+    display: inline-flex;
+}
+.ttt{
+    position: relative;
+    display: inline-flex;
+    width: 20.5vh;
+}
+.buttons_discount{
+    margin-left: -19vh;
+    margin-top: 8vh;
+}
+.description_in_discount{
+    padding: 4vh 2vh;
+    height: 100%;
+}
+.img_discount_product{
+    border: 1px solid green;
+}
+.close_button_discount{
+    padding: 0.5vh 1vh;
+    font-size: 2vh;
+    background-color: white;
+    border: 0.2vh solid green;
+    position: absolute;
+    right: 0.5vh;
+    top: 0.5vh;
+}
+.close_button_discount:hover{
+    background-color: Mintcream;
+}
+.close_button_discount:active{
+    background-color: lightgreen;
+    box-shadow: 0 0 3px gray;
+}
+.inBasket_sum{
+    position: absolute;
+    left: 81%;
+    top: 7.9vh;
+    font-size: 1.7vh;
+    color: green;
+    font-family: Bahnschrift, serif;
+}
+.toMove{
+    margin-left: 6.6vh;
+    margin-top: 1vh;
+    height: 17vh;
+    width: 11.6vh;
+    display: inline-flex;
+    overflow: hidden;
+}
+.toMove:hover{
+    transform: scale(2.3);
+}
+.root_container{
+    padding-top: 10vh;
+    position: relative;
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.circle{
+    border-radius: 50%;
+}
+.product_discount {
+    padding-top: 12vh;
+    margin-left: 13vh;
+}
+.test{
+    position: relative;
+}
+.slide{
+    /*overflow: hidden;*/
+    width: 12vh;
+    display: inline-flex;
+}
+.container_for_discount_img{
+    overflow: hidden;
+    display: flex;
+}
+.container_for_slide_elements{
+    position: relative;
+}
+.discountProducts{
+    cursor: pointer;
+}
+.payment_btn{
+    border: 0.2vh solid green;
+    border-radius: 2px;
+    background-color: white;
+    left: 3vh;
+    bottom: 2vh;
+    font-family: Bahnschrift, serif;
+    font-size: 1.5vh;
+    box-shadow: 0.5vh 0.5vh 0.5vh gray;
+}
+.payment_btn:hover{
+    background-color: Mintcream;
+}
+.payment_btn:active{
+    box-shadow: none;
+}
+.basketIcon{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: 7vh;
+    width: 7vh;
+    left: 85%;
+    top: 1.8vh;
+    cursor: pointer;
+}
+.bst_icn:hover{
+    transform: scale(1.1);
+}
+.bst_icn:active{
+    transform: scale(1);
+}
+.number_in_basket{
+    position: absolute;
+    top: 2.7vh;
+    right: 3.6vh;
+    font-size: 1.7vh;
+    color: red;
+    cursor: pointer;
+}
+.absolut{
+    position: absolute;
+}
+
+.image_in_basket{
+    width: 7vh;
+    height: auto;
+    right: 13vh;
+}
+.priceInBasket{
+    right: 2vh;
+}
+.close_button_basket{
+    top: 0.5vh;
+    right: 0.5vh;
+    background-color: white;
+    border: 0.2vh solid green;
+    box-shadow: 0.5vh 0.5vh 0.5vh gray;
+    font-size: 2vh;
+    padding: 0.5vh 1vh;
+}
+.close_button_basket:hover{
+    background-color: lightgreen;
+}
+.close_button_basket:active{
+    box-shadow: none;
+}
+.basket{
+    border-radius: 2px;
+    top: 18vh;
+    right: 0.5vh;
+    padding: 2vh;
+    width: 50vh;
+    background-color: white;
+}
+.inside_basket_line{
+    margin-bottom: 1vh;
+}
+.hide{
+    display: none;
+}
+.basket_top{
+    position: absolute;
+    width: 4.5vh;
+    height: 1vh;
+    left: 0.5vh;
+}
+.btn_buy{
+    position: relative;
+    width: 12vh;
+    height: 3vh;
+    font-size: 1.5vh;
+    background: white;
+    border: 0.2vh solid green;
+    margin-top: 0;
+    white-space: nowrap;
+}
+.btn_buy_discount{
+    position: relative;
+    width: 12vh;
+    height: 3vh;
+    font-size: 1.5vh;
+    background: white;
+    border: 0.2vh solid green;
+    white-space: nowrap;
+    top: 0.6vh;
+}
+.btn_next{
+    margin-left: 6.6vh;
+}
+.mr{
+    margin-top: 5vh;
+    margin-right: 1vh;
+}
+.btn_buy:hover{
+    background-color: Mintcream;
+    border-radius: 0.7vh;
+}
+.btn_buy:active{
+    background-color: white;
+    box-shadow: 0 0 6px black;
+}
+.center{
+    text-align: center;
+    justify-content: center;
+}
+.fontGreen{
+    color: green;
+}
