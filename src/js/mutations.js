@@ -23,21 +23,13 @@ export default {
     },
 
     choose_leather(state, event){
-        // const temp = state.bags
-        // const param = 'Натуральная кожа'
         if(event.target.innerHTML === ''){
             state.leatherFlag = true
-            // console.log(state.bags[0].subCategories)
-            // state.bags = state.bags.filter(item => item.subCategories.length === 3)
-
-            // state.bags = state.bags.filter(item =>  item.subCategories.filter(sub => sub.title.includes(param)))
             event.target.innerHTML = '#'
         } else {
             if(event.target.innerHTML === '#'){
                 state.leatherFlag = false
                 event.target.innerHTML = ''
-                // console.log(temp)
-                // state.bags = temp
             }
         }
     },

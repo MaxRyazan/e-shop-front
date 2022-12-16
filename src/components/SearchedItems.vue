@@ -29,7 +29,7 @@
             </div>
 
             <div class="sub_category">
-              <div class="font_green" v-for="cat in item.subCategories" :key="cat"> -{{ cat.title }}</div>
+              <div class="font_green" v-for="cat in item.subCategories" :key="cat"> - {{ cat.title }}</div>
             </div>
 
             <search-items-div>

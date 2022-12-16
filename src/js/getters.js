@@ -1,11 +1,11 @@
 export default {
         getBags(state) {
             if(state.leatherFlag){
-                let temp =[]
+                let temp = []
                 for(let i = 0; i <  state.bags.length; i ++){
-                    for(let j = 0; j < state.bags[i].subCategories.length; i++){
+                    console.log()
+                    for(let j = 0; j < state.bags[i].subCategories.length; j++){
                         if(state.bags[i].subCategories[j].title === 'Натуральная кожа'){
-                            console.log(state.bags[i].subCategories[j])
                             temp.push(state.bags[i])
                         }
                     }
