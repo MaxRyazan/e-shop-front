@@ -2,7 +2,11 @@
   <div class="">
     <div class="inline">
       <label class="title_filter_item">Только натуральная кожа</label>
-      <button v-bind="leatherFlag" class="filter_leather" @click="choose_leather"></button>
+      <button v-bind="leatherFlag" class="filter_leather leatherFlag" @click="choose_leather"></button>
+    </div>
+    <div class="inline">
+      <label class="title_filter_item">Только в наличие</label>
+      <button v-bind="availableFlag" class="filter_leather availableFlag" @click="choose_leather"></button>
     </div>
   </div>
   <div class="inline w99">
@@ -89,7 +93,6 @@ export default {
     return {
       count: 1,
       discount: 0.8,
-      leatherFlag: false
     }
   },
   methods: {
@@ -126,7 +129,9 @@ export default {
   computed:{
     ...mapGetters({
       getBasket: "getBasket",
-      getBags: "getBags"
+      getBags: "getBags",
+      leatherFlag: "getLeatherFlag",
+      availableFlag: "getAvailableFlag"
 
     })
   },

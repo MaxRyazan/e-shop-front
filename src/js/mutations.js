@@ -23,13 +23,26 @@ export default {
     },
 
     choose_leather(state, event){
-        if(event.target.innerHTML === ''){
-            state.leatherFlag = true
-            event.target.innerHTML = '#'
-        } else {
-            if(event.target.innerHTML === '#'){
-                state.leatherFlag = false
-                event.target.innerHTML = ''
+        if(event.target.classList.contains('leatherFlag')) {
+            if (event.target.innerHTML === '') {
+                state.leatherFlag = true
+                event.target.innerHTML = '#'
+            } else {
+                if (event.target.innerHTML === '#') {
+                    state.leatherFlag = false
+                    event.target.innerHTML = ''
+                }
+            }
+        }
+        if(event.target.classList.contains('availableFlag')) {
+            if (event.target.innerHTML === '') {
+                state.availableFlag = true
+                event.target.innerHTML = '#'
+            } else {
+                if (event.target.innerHTML === '#') {
+                    state.availableFlag = false
+                    event.target.innerHTML = ''
+                }
             }
         }
     },

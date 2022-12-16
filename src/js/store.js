@@ -8,7 +8,8 @@ export default createStore({
         return {
             inBasket: [],
             bags: [],
-            leatherFlag: false
+            leatherFlag: false,
+            availableFlag: false
         }
     },
 
