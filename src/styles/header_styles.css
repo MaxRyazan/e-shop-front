@@ -87,7 +87,7 @@
 
 }
 .btn_in_discount{
-    margin-left: 11vh;
+    margin-left: 4vh;
     width: 12vh;
     height: 3vh;
     font-size: 1.5vh;
@@ -163,6 +163,11 @@
     width: 20.5vh;
     height: 23vh;
 }
+.border_red{
+    border: 1px solid red;
+    width: 20vh;
+    overflow: hidden;
+}
 .slider_discount{
     position: relative;
     border: 2px solid red;
@@ -180,8 +185,11 @@
     width: 20.5vh;
 }
 .buttons_discount{
-    margin-left: -19vh;
-    margin-top: 8vh;
+    position: absolute;
+    bottom: 1vh;
+    right: -6.5vh;
+    width: 100%;
+    display: flex;
 }
 .description_in_discount{
     padding: 4vh 2vh;

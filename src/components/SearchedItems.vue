@@ -1,10 +1,10 @@
 <template>
-  <div class="">
-    <div class="inline">
+  <div class="__filters">
+    <div class="inline _filters_items">
       <label class="title_filter_item">Только натуральная кожа</label>
       <button v-bind="leatherFlag" class="filter_leather leatherFlag" @click="choose_leather"></button>
     </div>
-    <div class="inline">
+    <div class="inline _filters_items">
       <label class="title_filter_item">Только в наличие</label>
       <button v-bind="availableFlag" class="filter_leather availableFlag" @click="choose_leather"></button>
     </div>
@@ -16,13 +16,7 @@
 
         <div class="show_bags_inner">
 
-          <div class="toMove">
-            <div v-if="item.photos.length === 3" class="inline slide" :class="'class'+item.productArticle">
-              <div class="img_in_card " v-for="photo in item.photos" :key="photo">
-                <img :src="getImgUrl(photo)" alt="" class="h15vh">
-              </div>
-            </div>
-          </div>
+        <app-slider :item="item" :key="item"></app-slider>
 
           <div>
             <button v-if="item.photos.length === 3" class="btn_buy btn_next" @click="action(item.productArticle)">Дальше</button>
@@ -83,6 +77,7 @@ import sliderDiscount from "@/components/SliderDiscount";
 import BasketIcon from "@/components/BasketIcon";
 import ShowBasket from "@/components/ShowBasket";
 import { mapMutations, mapGetters } from 'vuex'
+import AppSlider from "@/components/AppSlider";
 
 
 export default {
@@ -136,6 +131,6 @@ export default {
     })
   },
 
-  components: {SearchItemsDiv, BasketIcon, ShowBasket, sliderDiscount}
+  components: {AppSlider, SearchItemsDiv, BasketIcon, ShowBasket, sliderDiscount}
 }
 </script>

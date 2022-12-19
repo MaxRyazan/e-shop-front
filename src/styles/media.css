@@ -1,0 +1,103 @@
+@media (max-width: 1400px) {
+    .product_discount{
+        margin-left: 5vh;
+    }
+}
+
+@media (max-width: 900px) {
+    .product_discount{
+        margin-left: 2vh;
+    }
+}
+
+@media (max-width: 830px){
+    .img_container{
+        width: 5vh;
+        height: 5vh;
+    }
+    .description{
+        font-size: 1.3vh;
+    }
+    .header_container_for_items{
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        align-items: center;
+    }
+    .root_container{
+        width: 60%;
+    }
+}
+
+@media (max-width: 600px){
+    .inline.w99{
+        width: 80%;
+        margin-left: 20%;
+        transform: translate(0, -10%);
+    }
+    .header_main{
+        flex-direction: column;
+        position: sticky;
+        margin-bottom: 0;
+        left: 1vh;
+        top: 17vh;
+        width: 8vh;
+    }
+    .basketIcon{
+        top: 3vh;
+        left: 3.5vh;
+        width: 5vh;
+        height: 5vh;
+    }
+    .inBasket_sum{
+        top: 7vh;
+        left: 1vh;
+        font-size: 1.5vh;
+        max-width: 10vh;
+    }
+    .__filters{
+        display: flex;
+        position: absolute;
+        width: 80%;
+        right: -5vh;
+        top: 3vh;
+        text-align: center;
+    }
+    .root_container{
+        padding-top: 0;
+        margin-top: 15vh;
+    }
+    .title_filter_item{
+        max-width: 100%;
+    }
+    .inline._filters_items{
+        width: 50%;
+        margin-right: 3vh;
+    }
+    .filter_leather{
+        position: relative;
+        left: 0.5vh;
+
+    }
+    .container_for_discount_img{
+        margin-top: 5vh;
+    }
+}
+
+@media (max-width: 550px) {
+    .root_container{
+        width: 40%;
+    }
+    .items_in_root .title{
+        font-size: 1.5vh;
+    }
+    .show_bags_inner{
+        width: 15vh;
+    }
+    .toMove{
+        margin-left: 2vh;
+    }
+    .btn_next{
+        margin-left: 2vh;
+    }
+}

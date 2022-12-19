@@ -1,11 +1,6 @@
 export default {
     addProductToBasket(state, payload){
-        if(!payload.discount){
             state.inBasket.push(payload)
-        } else {
-            payload.productPrice = payload.productPrice * 0.8
-            state.inBasket.push(payload)
-        }
     },
 
     removeProductFromBasket(state, payload){
