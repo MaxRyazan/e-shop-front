@@ -179,7 +179,7 @@
 }
 .discount_color_price:before{
     content: "";
-    border-bottom: 2px solid red;
+    border-bottom: 2px solid rgba(255, 0, 0, 0.7);
     transform: rotate(30deg);
     position: absolute;
     width: 120%;
@@ -188,7 +188,7 @@
 }
 .discount_color_price:after{
     content: "";
-    border-bottom: 2px solid red;
+    border-bottom: 2px solid rgba(255, 0, 0, 0.7);
     transform: rotate(-30deg);
     position: absolute;
     width: 120%;
