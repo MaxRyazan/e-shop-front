@@ -12,18 +12,18 @@
     </div>
   </div>
 
-  <modal-discount-window :product="product" @close-window="closeWindow"></modal-discount-window>
+  <modal-discount-window :product="store.product" @close-window="closeWindow"></modal-discount-window>
 </template>
 
 <script>
 import "../styles/header_styles.css";
-import ModalDiscountWindow from "@/components/ModalDiscountWindow";
-
+import ModalDiscountWindow from "@/components/AppModalDiscountWindow";
+import '@/js/store'
 
 export default {
   name: "SliderDiscount",
-  mounted() {
-    this.getDiscountProducts();
+   mounted() {
+     this.getDiscountProducts();
   },
 
 
@@ -31,7 +31,6 @@ export default {
     return {
       DISCOUNT_URL: ' http://localhost:8088/product/discount',
       products: [],
-      product: null,
       count: 1
     }
   },

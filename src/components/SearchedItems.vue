@@ -1,5 +1,6 @@
 <template>
-  <div v-if="getBags[0].category === 'WOMAN_BAG' || getBags[0].category === 'MAN_BAG'" class="__filters">
+<!--  <div v-if="getBags[0].category === 'WOMAN_BAG' || getBags[0].category === 'MAN_BAG'" class="__filters">-->
+    <div class="__filters">
     <div class="inline _filters_items">
       <label class="title_filter_item">Только натуральная кожа</label>
       <button v-bind="leatherFlag" class="filter_leather leatherFlag" @click="choose_leather"></button>
@@ -15,49 +16,8 @@
         <div class="title">{{ item.productName }}</div>
 
         <div class="show_bags_inner">
-
-        <app-slider :item="item" :key="item"></app-slider>
-
-          <div>
-            <button v-if="item.photos.length === 3" class="btn_buy btn_next" @click="action(item.productArticle)">Дальше</button>
-
-            <div class="category">
-              <h3>Описание:</h3>
-              <div class="font_green">{{ item.productDescription }}</div>
-            </div>
-
-            <div class="sub_category">
-              <div class="font_green" v-for="cat in item.subCategories" :key="cat"> - {{ cat.title }}</div>
-            </div>
-
-            <search-items-div>
-              <template v-slot:title>Артикул: </template>
-              <template v-slot:content>{{ item.productArticle }}</template>
-            </search-items-div>
-
-            <search-items-div>
-              <template v-slot:title>Производитель: </template>
-              <template v-slot:content>{{ item.productManufacturer }}</template>
-            </search-items-div>
-
-            <search-items-div>
-              <template v-slot:title>Цена: </template>
-              <template v-slot:content v-if="!item.discount">{{ item.productPrice }} &#x20bd;</template>
-                <template v-slot:content v-else><span class="discount_color_price">{{ item.productPrice }}</span><span class="font_green"> {{ item.productPrice * discount }} &#x20bd;</span></template>
-            </search-items-div>
-
-            <div class="category">
-              <h3>{{ checkProductStatus(item) }}</h3>
-            </div>
-
-            <div class="center">
-              <button v-if="item.productStatus === 'AVAILABLE'"
-                      class="btn_buy btn_hide"
-                      @click="addThisProductToBasket(item)">Купить
-              </button>
-            </div>
-          </div>
-
+            <app-slider :item="item" :key="item" @action="action(item.productArticle)"></app-slider>
+            <app-product-card :item="item" @addThisProductToBasket="addThisProductToBasket"></app-product-card>
         </div>
       </div>
     </div>
@@ -66,18 +26,17 @@
 
   <div class="basketIcon" @click="showBasket">
     <img v-if="getBasket.length > 0" src="@/images/basketTop.png" alt="" class="basket_top">
-    <basket-icon class="bst_icn"></basket-icon>
+      <img src="@/images/basketIcon.png" alt="">
   </div>
   <show-basket></show-basket>
 </template>
 
 <script>
-import SearchItemsDiv from "@/components/SearchItemsDiv";
 import sliderDiscount from "@/components/SliderDiscount";
-import BasketIcon from "@/components/BasketIcon";
 import ShowBasket from "@/components/ShowBasket";
 import { mapMutations, mapGetters } from 'vuex'
 import AppSlider from "@/components/AppSlider";
+import AppProductCard from "@/components/AppProductCard";
 
 
 export default {
@@ -96,10 +55,6 @@ export default {
       choose_leather: "choose_leather"
     }),
 
-
-    checkProductStatus(item) {
-      return item.productStatus === 'AVAILABLE' ? 'В наличии' : 'Нет в наличии'
-    },
 
     action(param) {
       let blockToMove = document.querySelector('.class' + param)
@@ -131,6 +86,6 @@ export default {
     })
   },
 
-  components: {AppSlider, SearchItemsDiv, BasketIcon, ShowBasket, sliderDiscount}
+  components: {AppProductCard, AppSlider, ShowBasket, sliderDiscount}
 }
 </script>

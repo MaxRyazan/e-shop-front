@@ -6,10 +6,11 @@
             </div>
         </div>
     </div>
+    <button v-if="item.photos.length === 3" class="btn_buy btn_next" @click="$emit('action', item.productArticle)">Дальше</button>
 </template>
 
 <script setup>
-import { defineProps} from 'vue'
+import { defineProps, defineEmits } from 'vue'
 
 defineProps({
     item:{
@@ -17,6 +18,7 @@ defineProps({
         required: true
     }
 })
+defineEmits(['action'])
 
 const getImage = (photo) => require('@/assets/img/' + photo + '.png');
 

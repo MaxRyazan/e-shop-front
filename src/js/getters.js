@@ -36,7 +36,9 @@ export default {
             return state.bags
         },
 
-
+        getProduct(state){
+            return state.product
+        },
 
         getBasket(state){
             return state.inBasket
@@ -61,6 +63,7 @@ export default {
                     return ''
                 }
         },
+
 
         createBasketTitle(state) {
             return state.inBasket.reduce((sum, item) => sum + item.productPrice, 0) > 0 ? 'Текущая сумма покупок:' : 'Корзина пока еще пуста('

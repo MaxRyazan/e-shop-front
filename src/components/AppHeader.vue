@@ -13,7 +13,7 @@
 
 <script>
 import "../styles/header_styles.css"
-import HeaderButton from "@/components/HeaderButton";
+import HeaderButton from "@/components/AppHeaderButton";
 import SearchedItems from "@/components/SearchedItems";
 import store from "@/js/store";
 export default {
