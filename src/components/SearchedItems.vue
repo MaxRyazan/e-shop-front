@@ -1,5 +1,5 @@
 <template>
-  <div class="__filters">
+  <div v-if="getBags[0].category === 'WOMAN_BAG' || getBags[0].category === 'MAN_BAG'" class="__filters">
     <div class="inline _filters_items">
       <label class="title_filter_item">Только натуральная кожа</label>
       <button v-bind="leatherFlag" class="filter_leather leatherFlag" @click="choose_leather"></button>
