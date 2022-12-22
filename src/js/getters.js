@@ -54,17 +54,17 @@ export default {
             let sum = 0
             if (state.inBasket.length > 0) {
                 for(let item of state.inBasket){
-                  sum  += (item.discount ? (item.productPrice * 0.8) :  (item.productPrice) )
+                  sum  += (item.discount === 1 ? (item.productPrice * 0.8) :  (item.productPrice) )
                 }
                 return sum
             } else {
                     return ''
                 }
-
         },
 
         createBasketTitle(state) {
             return state.inBasket.reduce((sum, item) => sum + item.productPrice, 0) > 0 ? 'Текущая сумма покупок:' : 'Корзина пока еще пуста('
         },
+
 
 }

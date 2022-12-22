@@ -7,15 +7,15 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "HeaderButton",
-  props:{
+<script setup>
+import { defineProps } from 'vue'
+
+defineProps({
     path: {
-      type: String,
-      required: true,
-      default: ''
-    },
-  }
-}
+        type: String,
+        required: true,
+        default: ''
+    }
+})
+
 </script>
