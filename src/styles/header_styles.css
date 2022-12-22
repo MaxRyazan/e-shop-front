@@ -172,6 +172,29 @@
     position: relative;
     border: 2px solid red;
 }
+.discount_color_price{
+    color: black;
+    position: relative;
+    margin-right: 8px;
+}
+.discount_color_price:before{
+    content: "";
+    border-bottom: 2px solid red;
+    transform: rotate(30deg);
+    position: absolute;
+    width: 120%;
+    height: 50%;
+    left: 0;
+}
+.discount_color_price:after{
+    content: "";
+    border-bottom: 2px solid red;
+    transform: rotate(-30deg);
+    position: absolute;
+    width: 120%;
+    height: 50%;
+    left: 0;
+}
 .modal_info{
     position: absolute;
     background-color: white;

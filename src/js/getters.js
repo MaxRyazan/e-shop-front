@@ -1,5 +1,4 @@
 
-
 export default {
         getBags(state) {
             if (state.leatherFlag) {
@@ -52,15 +51,10 @@ export default {
         },
 
         calculatedResultSum(state) {
-            // if (state.inBasket.length > 0) {
-            //     return state.inBasket.reduce((sum, item) => sum + item.productPrice, 0)
-            // } else {
-            //     return ''
-            // }
             let sum = 0
             if (state.inBasket.length > 0) {
                 for(let item of state.inBasket){
-                  sum  += (item.discount === true ? item.productPrice * 0.8 :  item.productPrice)
+                  sum  += (item.discount ? (item.productPrice * 0.8) :  (item.productPrice) )
                 }
                 return sum
             } else {

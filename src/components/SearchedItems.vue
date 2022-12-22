@@ -43,7 +43,7 @@
             <search-items-div>
               <template v-slot:title>Цена: </template>
               <template v-slot:content v-if="!item.discount">{{ item.productPrice }} &#x20bd;</template>
-              <template v-slot:content v-else>{{ item.productPrice * discount }} &#x20bd;</template>
+                <template v-slot:content v-else><span class="discount_color_price">{{ item.productPrice }}</span><span class="font_green"> {{ item.productPrice * discount }} &#x20bd;</span></template>
             </search-items-div>
 
             <div class="category">
