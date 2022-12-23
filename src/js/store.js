@@ -10,7 +10,8 @@ export default createStore({
             bags: [],
             leatherFlag: false,
             availableFlag: false,
-            product: null
+            product: null,
+            discount: 0.8
         }
     },
 

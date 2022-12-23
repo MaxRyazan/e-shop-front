@@ -16,13 +16,18 @@ import "../styles/header_styles.css"
 import HeaderButton from "@/components/AppHeaderButton";
 import SearchedItems from "@/components/SearchedItems";
 
-import {mapGetters, mapMutations} from "vuex";
+import { mapGetters, mapMutations } from "vuex";
 export default {
   name: "AppHeader",
   methods: {
     async searchBags(param) {
       const data = await fetch('http://localhost:8088/product/' + param)
        this.searchedBags =  await data.json()
+        this.searchedBags.filter(bag => {
+            if(bag.discount) {
+                bag.productPrice = bag.productPrice * this.getDiscount
+            }
+        })
         if(this.getProduct){
             this.setBags(this.searchedBags.filter(bag => bag.id !== this.getProduct.id))
         } else {
@@ -37,7 +42,8 @@ export default {
 
     computed:{
       ...mapGetters({
-          getProduct: "getProduct"
+          getProduct: "getProduct",
+          getDiscount: "getDiscount"
       })
     },
   data() {

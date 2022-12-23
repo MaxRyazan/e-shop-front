@@ -23,8 +23,8 @@
             <template v-slot:title>Цена: </template>
             <template v-slot:content v-if="!item.discount">{{ item.productPrice }} &#x20bd;</template>
             <template v-slot:content v-else>
-                <span class="discount_color_price">{{ item.productPrice }}</span>
-                <span class="font_green"> {{ item.productPrice * discount }} &#x20bd;</span>
+                <span class="discount_color_price">{{ item.productPrice / discount }}</span>
+                <span class="font_green"> {{ item.productPrice }} &#x20bd;</span>
             </template>
         </search-items-div>
 
@@ -35,7 +35,7 @@
         <div class="center">
             <button v-if="item.productStatus === 'AVAILABLE'"
                     class="btn_buy btn_hide"
-                    @click="$emit('addThisProductToBasket', item)">Купить
+                    @click = add(item)>Купить
             </button>
         </div>
     </div>
@@ -43,15 +43,21 @@
 
 <script setup>
 import SearchItemsDiv from "@/components/AppProductCardHelper";
-import { defineProps, defineEmits} from 'vue'
-
+import { defineProps} from 'vue'
+import { useStore } from 'vuex'
 defineProps({item:{type: Object}} )
 
-defineEmits(['addThisProductToBasket'])
 
+const store  = useStore()
 const discount = 0.8
 
 const checkProductStatus = (item) => {
         return item.productStatus === 'AVAILABLE' ? 'В наличии' : 'Нет в наличии'
 }
+
+function add(item){
+    store.state.inBasket.push(item)
+}
+
+
 </script>

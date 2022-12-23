@@ -1,5 +1,9 @@
 export default {
     addProductToBasket(state, payload){
+        if(payload.discount === 1){
+            payload.productPrice = payload.productPrice * 0.8
+            console.log(payload.productPrice)
+        }
             state.inBasket.push(payload)
     },
 

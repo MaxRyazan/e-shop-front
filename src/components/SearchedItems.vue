@@ -1,5 +1,4 @@
 <template>
-<!--  <div v-if="getBags[0].category === 'WOMAN_BAG' || getBags[0].category === 'MAN_BAG'" class="__filters">-->
     <div class="__filters">
     <div class="inline _filters_items">
       <label class="title_filter_item">Только натуральная кожа</label>
@@ -10,17 +9,17 @@
       <button v-bind="availableFlag" class="filter_leather availableFlag" @click="choose_leather"></button>
     </div>
   </div>
-  <div class="inline w99">
-    <div class="root_container">
-      <div v-for="item in getBags" :key="item.id" class="items_in_root">
-        <div class="title">{{ item.productName }}</div>
+      <div class="inline w99">
+        <div class="root_container">
+          <div v-for="item in getBags" :key="item.id" class="items_in_root">
+            <div class="title">{{ item.productName }}</div>
 
-        <div class="show_bags_inner">
-            <app-slider :item="item" :key="item" @action="action(item.productArticle)"></app-slider>
-            <app-product-card :item="item" @addThisProductToBasket="addThisProductToBasket"></app-product-card>
+            <div class="show_bags_inner">
+                <app-slider :item="item" :key="item" @action="action(item.productArticle)"></app-slider>
+                <app-product-card :item="item" @addThisProductToBasket="addThisProductToBasket"></app-product-card>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
         <slider-discount></slider-discount>
   </div>
 

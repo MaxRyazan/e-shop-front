@@ -1,5 +1,5 @@
-
 export default {
+
         getBags(state) {
             if (state.leatherFlag) {
                 let temp = []
@@ -40,6 +40,10 @@ export default {
             return state.product
         },
 
+        getDiscount(state){
+            return state.discount
+        },
+
         getBasket(state){
             return state.inBasket
         },
@@ -56,7 +60,7 @@ export default {
             let sum = 0
             if (state.inBasket.length > 0) {
                 for(let item of state.inBasket){
-                  sum  += (item.discount === 1 ? (item.productPrice * 0.8) :  (item.productPrice) )
+                  sum  += item.productPrice
                 }
                 return sum
             } else {
