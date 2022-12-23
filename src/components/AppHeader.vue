@@ -15,17 +15,34 @@
 import "../styles/header_styles.css"
 import HeaderButton from "@/components/AppHeaderButton";
 import SearchedItems from "@/components/SearchedItems";
-import store from "@/js/store";
+
+import {mapGetters, mapMutations} from "vuex";
 export default {
   name: "AppHeader",
   methods: {
     async searchBags(param) {
       const data = await fetch('http://localhost:8088/product/' + param)
-      store.state.bags = await data.json()
+       this.searchedBags =  await data.json()
+        if(this.getProduct){
+            this.setBags(this.searchedBags.filter(bag => bag.id !== this.getProduct.id))
+        } else {
+            this.setBags(this.searchedBags)
+        }
+
     },
+      ...mapMutations({
+          setBags: "setBags"
+      })
   },
+
+    computed:{
+      ...mapGetters({
+          getProduct: "getProduct"
+      })
+    },
   data() {
     return {
+      searchedBags: [],
       woman: require('@/images/woman_bag.png'),
       man: require('@/images/man_bag.png'),
       wallet: require('@/images/wallet.png'),
@@ -34,6 +51,8 @@ export default {
       belts: require('@/images/belt.png'),
     }
   },
+
+
 
   components: {HeaderButton, SearchedItems},
 }

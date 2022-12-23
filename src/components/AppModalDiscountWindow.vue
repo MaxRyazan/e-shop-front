@@ -1,35 +1,30 @@
 <template>
-  <div v-if="product != null" class="modal_info border_green" ref="modal">
-<!--      <app-slider :item="product" :key="product.id" @action="action(product.productArticle)"></app-slider>-->
-<!--      <div class="description_in_discount">-->
-<!--          <button class="close_button_discount" @click="$emit('closeWindow')">x</button>-->
-<!--          <h4 class="description item_in_discount">{{ product.productName }}</h4>-->
-<!--          <h4 class="description item_in_discount">{{ product.productDescription }}</h4>-->
-<!--          <h4 class="description item_in_discount">{{ product.productManufacturer }}</h4>-->
-<!--          <h4 class="description item_in_discount">{{ product.productPrice }}</h4>-->
-<!--          <div class="buttons_discount">-->
-
-<!--              <button class="btn_in_discount" @click="addThisProductToBasket(product)">Купить</button>-->
-<!--          </div>-->
-<!--      </div>-->
-
-      <app-product-card :item="product" @addThisProductToBasket="addThisProductToBasket(product)"></app-product-card>
+  <div v-if="getProduct !== null" class="modal_info border_green">
+      <app-slider :item="getProduct" :key="getProduct.id" @action="action(getProduct.productArticle)"></app-slider>
+      <div class="description_in_discount">
+          <button class="close_button_discount" @click="setProduct(null)">x</button>
+          <h4 class="description item_in_discount">{{ getProduct.productName }}</h4>
+          <h4 class="description item_in_discount">{{ getProduct.productDescription }}</h4>
+          <h4 class="description item_in_discount">{{ getProduct.productManufacturer }}</h4>
+          <h4 class="description item_in_discount">{{ getProduct.productPrice }}</h4>
+          <div class="buttons_discount">
+             <button class="btn_in_discount" @click="addThisProductToBasket(getProduct)">Купить</button>
+          </div>
+      </div>
   </div>
 </template>
 
 <script>
-import { mapMutations } from "vuex";
-import AppProductCard from "@/components/AppProductCardHelper";
+import {mapGetters, mapMutations} from "vuex";
+import AppSlider from "@/components/AppSlider"
 
 export default {
     name: "ModalDiscountWindow",
-
-    props: ['product'],
     emits: ['closeWindow'],
 
     data() {
         return {
-            count: 1
+            count: 1,
         }
     },
 
@@ -38,8 +33,10 @@ export default {
             return require('@/assets/img/' + photo + '.png');
         },
 
+
         ...mapMutations({
-            addThisProductToBasket: "addProductToBasket"
+            addThisProductToBasket: "addProductToBasket",
+            setProduct: "setProduct"
         }),
 
         action(param) {
@@ -53,6 +50,12 @@ export default {
         },
 
     },
-    components: {AppProductCard}
+    computed:{
+        ...mapGetters({
+            getProduct: "getProduct"
+        }),
+    },
+
+    components: {AppSlider}
 }
 </script>

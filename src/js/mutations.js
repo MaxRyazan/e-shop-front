@@ -3,9 +3,17 @@ export default {
             state.inBasket.push(payload)
     },
 
-    removeProductFromBasket(state, payload){
-        state.inBasket = state.inBasket.filter(item => item.id !== payload.id)
+    setProduct(state, item){
+        state.product = item
+        if(item !== null){
+            state.bags = state.bags.filter(bag => bag.id !== item.id)
+        }
     },
+
+    setBags(state, item){
+        state.bags = item
+    },
+
 
     closeBasket(){
         document.querySelector('.basket').classList.add('hide')
@@ -41,4 +49,5 @@ export default {
             }
         }
     },
+
 }

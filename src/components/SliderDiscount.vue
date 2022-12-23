@@ -4,7 +4,7 @@
       <div class="container_for_discount_img" v-cloak>
         <div class="test">
           <div class="discountProducts mb5" v-for="item in products" :key="item.id">
-            <img v-if="item.photos.length === 3" :src="getImgUrl(item.photos[0])" alt="" class="w99 h12" @click="chooseProduct(item)">
+            <img v-if="item.photos.length === 3" :src="getImgUrl(item.photos[0])" alt="" class="w99 h12" @click="setProduct(item)">
             <h4 class="description discountTitle border_green">Цена: {{ item.productPrice }} &#x20bd;</h4>
           </div>
         </div>
@@ -12,13 +12,15 @@
     </div>
   </div>
 
-  <modal-discount-window :product="store.product" @close-window="closeWindow"></modal-discount-window>
+  <modal-discount-window  @close-window="setProduct(null)"></modal-discount-window>
 </template>
 
 <script>
-import "../styles/header_styles.css";
+   //TODO НЕ РАБОТАЕТ :product
 import ModalDiscountWindow from "@/components/AppModalDiscountWindow";
 import '@/js/store'
+   import {mapGetters, mapMutations} from "vuex";
+
 
 export default {
   name: "SliderDiscount",
@@ -53,19 +55,21 @@ export default {
       }, 25)
     },
 
-    chooseProduct(item) {
-      this.product = item
-    },
+      ...mapMutations({
+          setProduct: "setProduct"
+      }),
 
-    closeWindow(){
-      this.product = null
-    },
 
     getImgUrl(photo) {
       return require('@/assets/img/' + photo + '.png');
     },
 
   },
+    computed:{
+        ...mapGetters({
+            getProduct: "getProduct"
+        }),
+    },
 
   components:{ModalDiscountWindow}
 
