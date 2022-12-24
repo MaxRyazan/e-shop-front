@@ -34,7 +34,7 @@
 
         <div class="center">
             <button v-if="item.productStatus === 'AVAILABLE'"
-                    class="btn_buy btn_hide"
+                    class="btn_buy"
                     @click = add(item)>Купить
             </button>
             <button v-else class="btn_deactive_red">Закончилось :(</button>

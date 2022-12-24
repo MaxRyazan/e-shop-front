@@ -20,7 +20,6 @@ import AppSlider from "@/components/AppSlider"
 
 export default {
     name: "ModalDiscountWindow",
-    emits: ['closeWindow'],
 
     data() {
         return {
