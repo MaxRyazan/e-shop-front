@@ -40,6 +40,34 @@ export default {
             return state.product
         },
 
+        sortByPriceToHight(state){
+                return state.bags.sort(function (a, b){
+                    if(a.productPrice > b.productPrice){
+                        return 1
+                    }
+                    if(a.productPrice < b.productPrice){
+                        return -1
+                    }
+                    if(a.productPrice === b.productPrice){
+                        return 0
+                    }
+                })
+        },
+
+        defaultSort(state){
+            return state.bags.sort(function (a, b){
+                if(a.productName > b.productName){
+                    return 1
+                }
+                if(a.productName < b.productName){
+                    return -1
+                }
+                if(a.productName === b.productName){
+                    return 0
+                }
+            })
+        },
+
         getDiscount(state){
             return state.discount
         },
@@ -47,6 +75,7 @@ export default {
         getBasket(state){
             return state.inBasket
         },
+
 
         getLeatherFlag(state){
             return state.leatherFlag
@@ -68,10 +97,8 @@ export default {
                 }
         },
 
-
         createBasketTitle(state) {
             return state.inBasket.reduce((sum, item) => sum + item.productPrice, 0) > 0 ? 'Текущая сумма покупок:' : 'Корзина пока еще пуста('
         },
-
 
 }

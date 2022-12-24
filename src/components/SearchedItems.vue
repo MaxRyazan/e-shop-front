@@ -1,19 +1,10 @@
 <template>
-    <div class="__filters">
-    <div class="inline _filters_items">
-      <label class="title_filter_item">Только натуральная кожа</label>
-      <button v-bind="leatherFlag" class="filter_leather leatherFlag" @click="choose_leather"></button>
-    </div>
-    <div class="inline _filters_items">
-      <label class="title_filter_item">Только в наличие</label>
-      <button v-bind="availableFlag" class="filter_leather availableFlag" @click="choose_leather"></button>
-    </div>
-  </div>
+      <app-leather-filters></app-leather-filters>
+      <app-sort-component></app-sort-component>
       <div class="inline w99">
         <div class="root_container">
           <div v-for="item in getBags" :key="item.id" class="items_in_root">
             <div class="title">{{ item.productName }}</div>
-
             <div class="show_bags_inner">
                 <app-slider :item="item" :key="item" @action="action(item.productArticle)"></app-slider>
                 <app-product-card :item="item" @addThisProductToBasket="addThisProductToBasket"></app-product-card>
@@ -21,13 +12,13 @@
           </div>
         </div>
         <slider-discount></slider-discount>
-  </div>
+      </div>
 
-  <div class="basketIcon" @click="showBasket">
+      <div class="basketIcon" @click="showBasket">
     <img v-if="getBasket.length > 0" src="@/images/basketTop.png" alt="" class="basket_top">
       <img src="@/images/basketIcon.png" alt="">
   </div>
-  <show-basket></show-basket>
+      <show-basket></show-basket>
 </template>
 
 <script>
@@ -36,6 +27,8 @@ import ShowBasket from "@/components/ShowBasket";
 import { mapMutations, mapGetters } from 'vuex'
 import AppSlider from "@/components/AppSlider";
 import AppProductCard from "@/components/AppProductCard";
+import AppLeatherFilters from "@/components/AppLeatherFilters";
+import AppSortComponent from "@/components/AppSortComponent";
 
 
 export default {
@@ -48,6 +41,7 @@ export default {
       discount: 0.8,
     }
   },
+
   methods: {
     ...mapMutations({
       addThisProductToBasket: "addProductToBasket",
@@ -85,6 +79,6 @@ export default {
     })
   },
 
-  components: {AppProductCard, AppSlider, ShowBasket, sliderDiscount}
+  components: {AppSortComponent, AppLeatherFilters, AppProductCard, AppSlider, ShowBasket, sliderDiscount}
 }
 </script>

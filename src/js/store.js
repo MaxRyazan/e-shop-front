@@ -1,6 +1,7 @@
 import { createStore } from 'vuex'
 import mutations from "@/js/mutations";
 import getters from "@/js/getters";
+import actions from "@/js/actions";
 
 
 export default createStore({
@@ -10,6 +11,7 @@ export default createStore({
             bags: [],
             leatherFlag: false,
             availableFlag: false,
+            sortByPriceFlag: false,
             product: null,
             discount: 0.8
         }
@@ -17,4 +19,5 @@ export default createStore({
 
     mutations: mutations,
     getters: getters,
+    actions: actions
 })

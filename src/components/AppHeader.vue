@@ -15,19 +15,43 @@
 import "../styles/header_styles.css"
 import HeaderButton from "@/components/AppHeaderButton";
 import SearchedItems from "@/components/SearchedItems";
-
 import { mapGetters, mapMutations } from "vuex";
+
 export default {
   name: "AppHeader",
-  methods: {
+    data() {
+        return {
+            searchedBags: [],
+            woman: require('@/images/woman_bag.png'),
+            man: require('@/images/man_bag.png'),
+            wallet: require('@/images/wallet.png'),
+            suitcase: require('@/images/suitcase.png'),
+            umbrella: require('@/images/umbrella.png'),
+            belts: require('@/images/belt.png'),
+        }
+    },
+
+    methods: {
     async searchBags(param) {
       const data = await fetch('http://localhost:8088/product/' + param)
-       this.searchedBags =  await data.json()
-        this.searchedBags.filter(bag => {
+      this.searchedBags =  await data.json()
+      this.searchedBags.filter(bag => {
             if(bag.discount) {
                 bag.productPrice = bag.productPrice * this.getDiscount
             }
+      })
+        this.searchedBags.sort(function (a, b){
+            if(a.productName > b.productName){
+                return 1
+            }
+            if(a.productName < b.productName){
+                return -1
+            }
+            if(a.productName === b.productName){
+                return 0
+            }
         })
+
         if(this.getProduct){
             this.setBags(this.searchedBags.filter(bag => bag.id !== this.getProduct.id))
         } else {
@@ -37,28 +61,16 @@ export default {
     },
       ...mapMutations({
           setBags: "setBags"
-      })
+      }),
   },
+
 
     computed:{
       ...mapGetters({
           getProduct: "getProduct",
-          getDiscount: "getDiscount"
+          getDiscount: "getDiscount",
       })
     },
-  data() {
-    return {
-      searchedBags: [],
-      woman: require('@/images/woman_bag.png'),
-      man: require('@/images/man_bag.png'),
-      wallet: require('@/images/wallet.png'),
-      suitcase: require('@/images/suitcase.png'),
-      umbrella: require('@/images/umbrella.png'),
-      belts: require('@/images/belt.png'),
-    }
-  },
-
-
 
   components: {HeaderButton, SearchedItems},
 }

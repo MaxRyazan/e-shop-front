@@ -1,10 +1,8 @@
+
 export default {
+
     addProductToBasket(state, payload){
-        if(payload.discount === 1){
-            payload.productPrice = payload.productPrice * 0.8
-            console.log(payload.productPrice)
-        }
-            state.inBasket.push(payload)
+        state.inBasket.push(payload)
     },
 
     setProduct(state, item){
@@ -17,7 +15,6 @@ export default {
     setBags(state, item){
         state.bags = item
     },
-
 
     closeBasket(){
         document.querySelector('.basket').classList.add('hide')
@@ -53,5 +50,21 @@ export default {
             }
         }
     },
+
+    sortByPrice(state, event){
+        if(event.target.classList.contains('sortByPriceFlag')) {
+            if (event.target.innerHTML === '') {
+                state.sortByPriceFlag = true
+                event.target.innerHTML = '#'
+            } else {
+                if (event.target.innerHTML === '#') {
+                    state.sortByPriceFlag = false
+                    event.target.innerHTML = ''
+                }
+            }
+        }
+    }
+
+
 
 }

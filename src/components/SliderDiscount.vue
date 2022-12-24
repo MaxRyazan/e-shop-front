@@ -16,10 +16,9 @@
 </template>
 
 <script>
-   //TODO НЕ РАБОТАЕТ :product
 import ModalDiscountWindow from "@/components/AppModalDiscountWindow";
-import '@/js/store'
-   import {mapGetters, mapMutations} from "vuex";
+
+import {mapGetters, mapMutations} from "vuex";
 
 
 export default {
