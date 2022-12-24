@@ -1,5 +1,9 @@
 export default {
 
+        getPureBags(state){
+            return state.bags
+        },
+
         getBags(state) {
             if (state.leatherFlag) {
                 let temp = []

@@ -1,4 +1,5 @@
 <template>
+      <app-searcher></app-searcher>
       <app-leather-filters></app-leather-filters>
       <app-sort-component></app-sort-component>
       <div class="inline w99">
@@ -15,9 +16,9 @@
       </div>
 
       <div class="basketIcon" @click="showBasket">
-    <img v-if="getBasket.length > 0" src="@/images/basketTop.png" alt="" class="basket_top">
-      <img src="@/images/basketIcon.png" alt="">
-  </div>
+        <img v-if="getBasket.length > 0" src="@/images/basketTop.png" alt="" class="basket_top">
+        <img src="@/images/basketIcon.png" alt="">
+      </div>
       <show-basket></show-basket>
 </template>
 
@@ -29,6 +30,7 @@ import AppSlider from "@/components/AppSlider";
 import AppProductCard from "@/components/AppProductCard";
 import AppLeatherFilters from "@/components/AppLeatherFilters";
 import AppSortComponent from "@/components/AppSortComponent";
+import AppSearcher from "@/components/AppSearcher";
 
 
 export default {
@@ -79,6 +81,6 @@ export default {
     })
   },
 
-  components: {AppSortComponent, AppLeatherFilters, AppProductCard, AppSlider, ShowBasket, sliderDiscount}
+  components: {AppSearcher, AppSortComponent, AppLeatherFilters, AppProductCard, AppSlider, ShowBasket, sliderDiscount}
 }
 </script>
