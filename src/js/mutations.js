@@ -52,13 +52,13 @@ export default {
     },
 
     sortByPrice(state, event){
-        if(event.target.classList.contains('sortByPriceFlag')) {
+        if(event.target.classList.contains('sortByPriceIncrease')) {
             if (event.target.innerHTML === '') {
-                state.sortByPriceFlag = true
+                state.sortByPriceIncrease = true
                 event.target.innerHTML = '#'
             } else {
                 if (event.target.innerHTML === '#') {
-                    state.sortByPriceFlag = false
+                    state.sortByPriceIncrease = false
                     event.target.innerHTML = ''
                 }
             }

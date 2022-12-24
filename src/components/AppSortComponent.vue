@@ -1,8 +1,8 @@
 <template>
 <div class="__filters">
     <div class="inline _filters_items">
-        <label class="title_filter_item">Сортировать по цене</label>
-        <button v-bind="store.sortByPriceFlag" class="filter_leather sortByPriceFlag" @click="sortByPrice($event)"></button>
+        <label class="title_filter_item">Сортировать по возрастанию цены</label>
+        <button v-bind="store.sortByPriceIncrease" class="filter_leather sortByPriceIncrease" @click="sortByPrice($event)"></button>
     </div>
 </div>
 </template>
@@ -16,9 +16,9 @@ function sortByPrice($event){
     store.commit('sortByPrice', $event)
 }
 
-watch(() => store.state.sortByPriceFlag, () => {
-  if(store.state.sortByPriceFlag)  {
-      return store.getters.sortByPriceToHight
+watch(() => store.state.sortByPriceIncrease, () => {
+  if(store.state.sortByPriceIncrease)  {
+      return store.getters.sortByPriceIncrease
   } else {
       return store.getters.defaultSort
   }

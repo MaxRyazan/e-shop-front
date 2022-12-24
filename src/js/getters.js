@@ -40,7 +40,7 @@ export default {
             return state.product
         },
 
-        sortByPriceToHight(state){
+        sortByPriceIncrease(state){
                 return state.bags.sort(function (a, b){
                     if(a.productPrice > b.productPrice){
                         return 1

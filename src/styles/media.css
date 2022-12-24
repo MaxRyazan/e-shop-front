@@ -59,8 +59,6 @@
         display: flex;
         position: absolute;
         width: 80%;
-        right: -5vh;
-        top: 3vh;
         text-align: center;
     }
     .root_container{

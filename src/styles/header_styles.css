@@ -4,7 +4,7 @@
     background-color: white;
     display: flex;
     justify-content: space-around;
-    margin-bottom: 25vh;
+    margin-bottom: 15vh;
 }
 .show_bags_inner{
     height: 100%;
@@ -253,6 +253,14 @@
     display: inline-flex;
     overflow: hidden;
 }
+.toMove2{
+    margin-left: 6.6vh;
+    margin-top: 1vh;
+    height: 17vh;
+    width: 11.6vh;
+    display: inline-flex;
+    overflow: hidden;
+}
 .toMove:hover{
     position: relative;
     z-index: 9999;
@@ -400,6 +408,32 @@
 .btn_next{
     margin-left: 6.6vh;
 }
+.btn_deactive{
+    margin-left: 6.6vh;
+    border: 0;
+    position: relative;
+    width: 12vh;
+    height: 3vh;
+    font-size: 1.5vh;
+    background: white;
+    margin-top: 0;
+    white-space: nowrap;
+}
+.btn_deactive_red{
+    position: relative;
+    width: 12vh;
+    height: 3vh;
+    font-size: 1.5vh;
+    background: white;
+    margin-top: 0;
+    white-space: nowrap;
+    border: 1px solid #ff74b1;
+}
+.btn_deactive_red:hover{
+    background-color: #ff74b1;
+    border-radius: 6px;
+    color: white;
+}
 .mr{
     margin-top: 5vh;
     margin-right: 1vh;
@@ -434,4 +468,5 @@
 .title_filter_item{
     max-width: 20%;
     font-size: 1.7vh;
+    letter-spacing: 2px;
 }

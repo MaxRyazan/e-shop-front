@@ -6,7 +6,7 @@
         <button class="close_button_basket absolut" @click="closeBasket">x</button>
         <div class="inline relative  padding2">
           <h4 class="description vertical_center">{{ index + 1 + ') ' + item.productName }}</h4>
-          <img :src="getImgUrl(item.photos[0])" alt="" class="image_in_basket absolut">
+          <img v-if="item.photos.length === 3" :src="getImgUrl(item.photos[0])" alt="" class="image_in_basket absolut">
           <h4 class="description vertical_center absolut priceInBasket">{{ item.productPrice }} &#x20bd;</h4>
         </div>
       </div>
@@ -42,6 +42,7 @@ export default {
     }),
 
     getImgUrl(photo) {
+        console.log(photo)
       return require('@/assets/img/' + photo + '.png');
     },
   }

@@ -37,6 +37,7 @@
                     class="btn_buy btn_hide"
                     @click = add(item)>Купить
             </button>
+            <button v-else class="btn_deactive_red">Закончилось :(</button>
         </div>
     </div>
 </template>
