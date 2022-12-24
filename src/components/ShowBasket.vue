@@ -11,7 +11,10 @@
         </div>
       </div>
       <h4 class="absolut description result_price">Итого: {{ calculatedResultSum }} &#x20bd;</h4>
-      <button class="absolut payment_btn">Перейти к оплате</button>
+        <router-link to="/payment" class="absolut payment_btn">
+         Перейти к оплате
+        </router-link>
+
     </div>
     <div v-else>
       <button class="close_button_basket absolut" @click="closeBasket">x</button>

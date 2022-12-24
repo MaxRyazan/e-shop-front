@@ -18,7 +18,7 @@ import SearchedItems from "@/components/SearchedItems";
 import { mapGetters, mapMutations } from "vuex";
 
 export default {
-  name: "AppHeader",
+  name: "HeaderView",
     data() {
         return {
             searchedBags: [],
